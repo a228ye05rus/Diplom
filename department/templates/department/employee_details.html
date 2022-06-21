@@ -1,0 +1,69 @@
+{% extends 'department/layout.html' %}
+{% load static %}
+{% block title %}
+    {{ employee.surname }} {{ employee.name }} {{ employee.midname }}
+{% endblock %}
+{% block content %}
+    <br><br>
+    <div class="page-heading">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+              {% if employee.picture %}
+                <img style="height:500px; width:400px" src="{{ employee.picture.url }}">
+              {% else %}
+                <img style="height:500px; width:400px" src="{% static 'img/graduation-hat.jpg' %}">
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    {# общие сведения #}
+    <div class="row">
+          <div class="col-md-6">
+              <h2>{{ employee.surname }} {{ employee.name }} {{ employee.midname }}</h2>
+              <p>{{ employee.post }}</p>
+              <p>{{ employee.degree }}</p>
+              <p><strong>Почетные звания</strong><br>{{ employee.honorary_titles }}</p>
+              <p><strong>Образование</strong><br>{{ employee.education }}</p>
+              <p><strong>Трудовой стаж</strong><br>{{ employee.work_experience }}</p>
+
+          </div>
+          <div class="col-md-6">
+                <h2>Контакты</h2>
+              <p>{{ employee.contacts }}</p>
+              <p>{{ employee.mail }}</p>
+              <br><br>
+
+          </div>
+        </div>
+
+    {# подробные сведения #}
+    <section class="simple-post">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="assets/images/simple-post.jpg" alt="">
+            <div class="down-content">
+                <p><strong>Преподаваемые дисцпилины </strong><br>{{ employee.disciplines|safe }}</p><br>
+                <hr>
+                <p><strong>Научная специальность</strong><br>{{ employee.scientific_specialty }}</p><br>
+                <hr>
+                <p><strong>Данные о повышении квалификации</strong><br>{{ employee.Professional_development }}</p><br>
+                <hr>
+                <p><strong>Область научных интересов</strong><br>{{ employee.scientific_interests }}</p><br>
+                <hr>
+                <p><strong>Проекты</strong><br>{{ employee.projects|safe }}</p><br>
+                <hr>
+                <p><strong>Публикации</strong><br>{{ employee.publications|safe }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+<! -- Страничка для отображения подробностей о сотруднике кафедры -->

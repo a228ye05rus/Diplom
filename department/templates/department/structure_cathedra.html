@@ -1,0 +1,36 @@
+{% extends 'department/layout.html' %}
+{% block title %}
+    Состав кафедры
+{% endblock %}
+{% block content %}
+<section class="tables">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>{{ name }}</h2>
+        </div>
+        <div class="default-table">
+          <table>
+            <thead>
+              <tr>
+                <th>ФИО</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for i in employee %}
+                  <tr>
+                    <td><h3>{{ i.surname }} {{ i.name }} {{ i.midname }}</h3><br>{{ i.post }}</td>
+                    <td><a href="{% url 'employee_details' i.id %}" class="btn btn-warning">Подробнее</a></td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'department/layout.html' %}
+{% block title %}
+    Статьи
+{% endblock %}
+{% block content %}
+    <br>
+    <div class="features_text">
+        <h1>{{ article.name }}</h1>
+        <p>{{ article.date }}</p>
+        <p>{{ article.full_text|safe }}</p>
+        <a href="{% url 'index' %}" class="btn btn-warning">На главную</a>
+    </div>
+{% endblock %}
+<! -- Страничка для отображения статей из бокового меню -->

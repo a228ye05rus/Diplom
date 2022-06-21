@@ -1,0 +1,15 @@
+<nav id="menu">\
+  <ul>
+    <li>
+      {% for s in sects %}
+        <span class="opener">{{ s.name }}</span>
+            <ul>
+              {% for a in s.article_set.all %}
+              <li><a href="{% url 'article_details' a.id %}">{{ a.name }}</a></li>
+              {% endfor %}
+            </ul>
+      {% endfor %}
+    </li>
+    <li><a href="{% url 'news_home' %}">Новости</a></li>
+  </ul>
+</nav>

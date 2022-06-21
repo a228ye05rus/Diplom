@@ -1,0 +1,14 @@
+{% extends 'department/layout.html' %}
+{% block title %}
+    Новость
+{% endblock %}
+{% block content %}
+    <br>
+    <div class="features_text">
+        <h1>{{ news.headline }}</h1>
+        <p>{{ news.date }}</p>
+        <p>{{ news.full_text|safe }}</p>
+        <a href="{% url 'news_home' %}" class="btn btn-warning">Вернуться</a>
+    </div>
+{% endblock %}
+{# Страничка для отображения списка новостей #}

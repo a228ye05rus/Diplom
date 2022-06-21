@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Main</title>
+
+    <link href="{% static 'department/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'department/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'department/css/templatemo-style.css' %}">
+    <link rel="stylesheet" href="{% static 'department/css/owl.css' %}">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            {% include "department/header.html" %}
+
+              {% block content %}
+
+              {% endblock %}
+
+          </div>
+        </div>
+
+      <!-- Sidebar -->
+        {% include "department/sidebar.html" %}
+
+
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'department/js/jquery.min.js' %}"></script>
+    <script src="{% static 'departmentjs/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'department/js/browser.min.js' %}"></script>
+    <script src="{% static 'department/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'department/js/transition.js' %}"></script>
+    <script src="{% static 'department/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'department/js/custom.js' %}"></script>
+    <!--<script>
+        let menuItems = document.querySelectorAll(".menu-item");
+        menuItems.forEach(menuItem => {
+            //console.log(menuItem.parentNode.querySelector("ul"))
+            let ul = menuItem.parentNode.querySelector("ul");
+            ul.classList.add("hide");
+
+            menuItem.onclick = function() {
+                if (ul.classList.contains("hide")) {
+                    ul.classList.remove("hide");
+                    ul.classList.add("show");
+                } else if (ul.classList.contains("show")) {
+                    ul.classList.remove("show");
+                    ul.classList.add("hide");
+                } else {
+                    return;
+                }
+            }
+        });
+    </script>-->
+</body>
+
+</html>

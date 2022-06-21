@@ -1,0 +1,16 @@
+{% extends 'department/layout.html' %}
+{% block title %}
+    Новости
+{% endblock %}
+{% block content %}
+    <div class="features">
+        <h1>Новости</h1>
+        {% for n in news %}
+            <div class="alert alert-warning">
+                <h3>{{ n.headline }}</h3>
+                <p>{{ n.date }}</p>
+                <a href="{% url 'news_details' n.id %}" class="btn btn-warning">Подробнее</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,156 @@
+{% extends 'department/layout.html' %}
+{% load static %}
+{% block content %}
+            <!-- Banner -->
+            <section class="main-banner">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="banner-content">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="banner-caption">
+                            <h4>Дагестанский государственный университет</h4>
+                            <span><h3>Факультет математики и компьютерных наук</h3></span>
+                            <p></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!--Contact and map -->
+            <section class="contact-form">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <form id="contact" action="" method="post">
+                      <div class="row">
+                          <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Контактная данные</h6>
+                              <p class="card-subtitle mb-2 text-muted">Адрес: 367025, г.Махачкала, ул.Дзержинского, 12</p>
+                              <p class="card-subtitle mb-2 text-muted"><strong>Декан</strong> - Якубов Амучи Загирович</p>
+                              <p class="card-subtitle mb-2 text-muted">Тел: (8722) 56-21-23; 8(928)-511-50-55</p>
+                              <p class="card-subtitle mb-2 text-muted">E-mail: yakubovaz@mail.ru</p>
+                          </div>
+                          <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Состав кафедры</h6>
+                              {% for c in caths %}
+                              <input type="hidden" id="{{ c.id }}">
+                                <p class="card-subtitle mb-2 text-muted"><a href="{% url 'structure_cathedra' id=c.id %}">{{ c.name }}</a></p>
+                              {% endfor %}
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                    <div class="col-md-6">
+                      <div id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5838.3069989673995!2d47.497987978066156!3d42.97504006660146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404ea0419bc3fdfb%3A0xe3d6f81b01c5e1e!2z0KTQsNC60YPQu9GM0YLQtdGCINC80LDRgtC10LzQsNGC0LjQutC4INC4INC60L7QvNC_0YzRjtGC0LXRgNC90YvRhSDQvdCw0YPQug!5e0!3m2!1sru!2sru!4v1655563311973!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Services
+            <section class="services">
+              <div class="container-fluid">
+                <div class="row">
+
+                  <div class="col-md-4">
+                    <div class="service-item second-item">
+                      <div class="icon"></div>
+                      <h4></h4>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="service-item second-item">
+                      <div class="icon"></div>
+                      <h4>Bootstrap 4</h4>
+                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="service-item second-item">
+                      <div class="icon"></div>
+                      <h4></h4>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> -->
+
+            <!-- Top Image -->
+            <section class="top-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="{% static 'department/img/fmikn.jpg' %}" alt="">
+                    <div class="down-content">
+                      <p><h6>Факультет математики и компьютерных наук является одним из динамично развивающихся факультетов. На факультете функционируют четыре направления бакалавриата: 01.03.01  - Математика, 02.03.01  - Математика и компьютерные науки, 02.03.02  - Фундаментальная информатика и информационные технологии, 01.03.02 - Прикладная математика и информатика. Функционируют три направления магистратуры: 01.04.01 - Математика (по профилям  Математический анализ и Дифференциальные уравнения), 02.04.02  - Фундаментальная информатика и информационные технологии (по профилю Информационные технологии), 01.04.02 - Прикладная математика и информатика (по профилю Математическое моделирование).<br><br>На факультете функционируют четыре кафедры: дифференциальных уравнений и функционального анализа, математического анализа, дискретной математики и информатики, прикладной математики. Функционируют аспирантура и докторантура.
+
+Для успешной учебы студентов на факультете созданы все условия: учебные занятия проводятся в уютных аудиториях и оборудованных кабинетах, на кафедрах работают кружки и семинары для научно-исследовательской работы студентов и аспирантов, для занятий физкультурой и спортом имеется великолепный дворец спорта, нуждающимся в жилье студентам предоставляется общежитие с хорошими жилищно-бытовыми условиями. Только на одном нашем факультете имеются 4 компьютерных класса, два больших лекционных зала оборудованы для чтения лекций с использованием современных информационных технологий.
+
+Показателем качества учебы студентов факультета является не только высокая востребованность наших выпускников, но и их победы на различных олимпиадах и конкурсах по математике и информатике, в том числе, на международных, всероссийских и региональных. Наши студенты и аспиранты выиграли президентские и правительственные гранты за успешную учебу и научные успехи, получили дипломы за доклады на всероссийских научных конференциях, их приглашают на международные конференции по математике и информатике в зарубежные страны.</h6></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Left Image -->
+            <section class="left-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="{% static 'department/img/urfak.png' %}" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="right-content">
+                        <p><h6>Важным моментом становления математического образования в нашей республике стало открытие в 1931 году Дагестанского государственного педагогического института (преобразованного в 1957 году в Дагестанский государственный университет), на физико-техническом отделении которого начали готовить также учителей математики, но уже в 1932 году было открыто физико-математическое отделение, переросшее в последующем в физико-математический факультет. В 1964 году был создан математический факультет Дагестанского государственного университета. В 2011 году на факультете открыты новые направления: 010100 - Математика, 010200 – Математика и компьютерные науки, 010300 – Фундаментальная информатика и информационные технологии и 010400 – Прикладная математика и информатика. В связи с этим факультет переименован в Факультет математики и компьютерных наук.</h6></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Right Image -->
+            <section class="right-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="left-content">
+                        <p><h6>Выпускники факультета преподают математику и информатику в ведущих вузах республики: ДГПУ, ДГТУ, ДГИНХ и ДСХА, успешно работают в вузах и научных учреждениях других регионов России и зарубежом. На факультете подготовлены специалисты для Вьетнама, Египта, Иордании, Ирака, Кампучии, Кубы, Лаоса, Ирана и других стран. Показателем качества учебы студентов факультета является не только высокая востребованность наших выпускников, но и их победы на различных олимпиадах и конкурсах по математике и информатике, в том числе, на международных, всероссийских и региональных. Наши студенты и аспиранты выиграли президентские и правительственные гранты за успешную учебу и научные успехи, получили дипломы за доклады на всероссийских научных конференциях, их приглашают на международные конференции по математике и информатике в зарубежные страны. Деканом факультета математики и компьютерных наук в 2017г. избран кандидат физ.-мат. наук, доцент Якубов Амучи Загирович</h6></p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="{% static 'department/img/filfak.jpg' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="services">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-4">
+                      <img src="{% static 'department/img/prepod.png' %}" alt="">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'department/img/students.png' %}" alt="">
+                  </div>
+                  <div class="col-md-4">
+                      <img src="{% static 'department/img/comp_cab.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+{% endblock %}
